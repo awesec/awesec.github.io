@@ -24,12 +24,12 @@
 	
 <div class="content-wrap">
 	<div class="content-box">
-		<h1>Schneider Electric IGSS CGF File Parsing Uninitialized Pointer Vulnerability<span class="small">AWE-2021-008</span></h1>
+		<h1>Schneider Electric IGSS CGF File Parsing Heap-based Buffer Overflow Vulnerability<span class="small">AWE-2021-008</span></h1>
 		<div class="scroll-box">
 		<table class="info-table">
 		  <tr>
 			<th>CVE Number</th>
-			<td>CVE-2021-22758</td>
+			<td>CVE-2021-22760</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
@@ -49,7 +49,8 @@
 		  </tr>
 		  <tr>
 			<th>Summary</th>
-			<td>An uninitialized pointer vulnerability exists that could result in loss of data or execution of arbitrary code execution due to lack of input validation, when a malicious CGF (Configuration Group File) file is imported to IGSS Definition.</td>
+			<td>A heap-based buffer overflow vulnerability exists that could result in disclosure of information
+or execution of arbitrary code due to lack of input validation, when a malicious CGF (Configuration Group File) file is imported to IGSS Definition.</td>
 		  </tr>
 		  <tr>
 			<th>Resources</th>
@@ -58,9 +59,11 @@
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
-			<td>14.04.2021: Report sent to ICS-CERT/CISA<br />
-			21.04.2021: Received tracking number from ICS-CERT/CISA<br />
-			11.05.2021: ICS-CERT/CISA informs me of the planned patch schedule and public security notifcation plan from the vendor <br />
+			<td>12.04.2021: Report sent to Schneider Electric<br />
+			13.04.2021: Schneider Electric provides acknowledgement and tracking ID<br />
+			26.04.2021: Schneider Electric confirmed all reported security vulnerabilities<br />
+			04.05.2021: Schneider Electric provides status update and patch schedule<br />
+			07.05.2021: Schneider Electric provides status update and planned public security notification<br />
 			08.06.2021: Coordinated public release
 			</td>
 		  </tr>

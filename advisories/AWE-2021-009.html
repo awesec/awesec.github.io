@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<!-- Header content -->
 <div id="Advisories" class="pages advisories">
 		<header>
 				<div class="main-menu">
@@ -24,43 +25,43 @@
 	
 <div class="content-wrap">
 	<div class="content-box">
-		<h1>Schneider Electric IGSS CGF File Parsing Use-After-Free Vulnerability<span class="small">AWE-2021-009</span></h1>
+		<h1>SAP 3D Visual Enterprise Viewer PSD File Parsing Out-Of-Bounds Write Vulnerability<span class="small">AWE-2021-009</span></h1>
 		<div class="scroll-box">
 		<table class="info-table">
 		  <tr>
 			<th>CVE Number</th>
-			<td>CVE-2021-22759</td>
+			<td>CVE-2021-27640</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
-			<td>Schneider Electric</td>
+			<td>SAP</td>
 		  </tr>
 		  <tr>
 			<th>Product</th>
-			<td>IGSS</td>
+			<td>3D Visual Enterprise Viewer</td>
 		  </tr>
 		  <tr>
 			<th>Affected version</th>
-			<td>&#x2264; v15.0.0.21140</td>
+			<td>&#x2264; v9.10.3.100000</td>
 		  </tr>
 		  <tr>
 			<th>Patched version</th>
-			<td>v15.0.0.21141</td>
+			<td>Refer to SAP Security Note 3059999</td>
 		  </tr>
 		  <tr>
 			<th>Summary</th>
-			<td>A use-after-free vulnerability exists that could result in loss of data or execution of arbitrary code due to lack of input validation, when a malicious CGF (Configuration Group File) file is imported to IGSS Definition.</td>
+			<td>An out-of-bounds write vulnerability exists that could result in disclosure of information or execution of arbitrary code due to lack of input validation, when a malicious PSD file is opened.</td>
 		  </tr>
 		  <tr>
 			<th>Resources</th>
-			<td><a href="https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-159-01">Schneider Electric Security Notification</a>
-			<a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-159-04">ICS-CERT/CISA Advisory</a></td>
+			<td><a href="https://launchpad.support.sap.com/#/notes/3059999">SAP Security Note 3059999</a>
+			<a href="https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=578125999">SAP Security Patch Day – June 2021</a></td>
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
-			<td>14.04.2021: Report sent to ICS-CERT/CISA<br />
-			21.04.2021: Received tracking number from ICS-CERT/CISA<br />
-			11.05.2021: ICS-CERT/CISA informs me of the planned patch schedule and public security notifcation plan from the vendor <br />
+			<td>21.03.2021: Report sent to SAP<br />
+			22.03.2021: Tracking ID provided by SAP<br />
+			29.03.2021: Vulnerability confirmed by SAP<br />
 			08.06.2021: Coordinated public release
 			</td>
 		  </tr>
