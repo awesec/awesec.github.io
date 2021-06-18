@@ -786,6 +786,18 @@ header a{
 .top-content h1{
 	font-size:3em;
 	margin:0 auto 60px;
+	animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+	0%{text-shadow: 0 0 10px rgba(202, 228, 225,0.3),0 0 12px rgba(189, 230, 225, 0.3),0 0 18px rgba(153, 214, 207, 0.3);}
+	25%{text-shadow: 0 0 10px rgba(202, 228, 225,0.3),0 0 12px rgba(189, 230, 225, 0.3),0 0 18px rgba(153, 214, 207, 0.3);}
+	40%{text-shadow: 0 0 8px rgba(202, 228, 225,0.35),0 0 10px rgba(189, 230, 225, 0.35),0 0 14px rgba(153, 214, 207, 0.35);}
+	55%{text-shadow: 0 0 6px rgba(202, 228, 225,0.4),0 0 8px rgba(189, 230, 225, 0.4),0 0 10px rgba(153, 214, 207, 0.4);}
+	65%{text-shadow: 0 0 8px rgba(202, 228, 225,0.35),0 0 10px rgba(189, 230, 225, 0.35),0 0 14px rgba(153, 214, 207, 0.35);}
+	75%{text-shadow: 0 0 6px rgba(202, 228, 225,0.4),0 0 8px rgba(189, 230, 225, 0.4),0 0 10px rgba(153, 214, 207, 0.4);}
+	90%{text-shadow: 0 0 8px rgba(202, 228, 225,0.35),0 0 10px rgba(189, 230, 225, 0.35),0 0 14px rgba(153, 214, 207, 0.35);}
+	100%{text-shadow: 0 0 10px rgba(202, 228, 225,0.3),0 0 12px rgba(189, 230, 225, 0.3),0 0 18px rgba(153, 214, 207, 0.3);}
 }
 
 .content-wrap{
