@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- Header content -->
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>mySCADA myPRO Authentication Bypass Vulnerability<span class="small">AWE-2021-025</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-33013</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>mySCADA</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>myPRO</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v8.18.0</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>v8.20.0</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>The application is prone to an authentication bypass vulnerability. An unauthenticated remote attacker can exploit this issue to get complete access to the application. Combining this issue with CVE-2021-33009 (arbitrary file upload) and CVE-2021-33005 (path traversal), and considering the fact that the web server and services are being executed in the context of NT AUTHORITY\SYSTEM, a complete system compromise is trivial.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://www.myscada.org/downloads/other/Version_8.20.0.pdf">myPRO Changelog</a>
+			<a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-217-03">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>31.03.2021: Report sent to ICS-CERT/CISA<br />
+			12.04.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			20.04.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			21.04.2021: Received tracking number from ICS-CERT/CISA<br />
+			11.05.2021: Asking ICS-CERT/CISA for a status update<br />
+			11.05.2021: ICS-CERT informs me that the vendor has reported that they are producing patches<br />
+			17.05.2021: ICS-CERT informs me that the vendor needs at least 6 weeks to produce security updates<br />
+			24.06.2021: Asking ICS-CERT to publish the advisory next week<br />
+			14.07.2021: ICS-CERT informs me that the vendor patched all reported security issues. They also informed me that the vendor asked if I can verify all fixes.<br />
+			14.07.2021: Informing ICS-CERT that I won't verify security patches from vendors and asking for date of publication of the advisory<br />
+			14.07.2021: ICS-CERT informs me that they will ask the vendor if the advisory can be released next week<br />
+			02.08.2021: ICS-CERT provides a draft of the advisory, and a planned release date of the advisory for 05.08.<br />
+			05.08.2021: Public release of security advisory<br />
+			</td>	
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
