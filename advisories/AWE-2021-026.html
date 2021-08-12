@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- Header content -->
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Horner Automation Cscape File Parsing Uninitialized Pointer Vulnerability<span class="small">AWE-2021-026</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-33015</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Horner Automation</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>Cscape</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v9.90 SP3.5 (v9.90.104)</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>v9.90 SP5</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>The affected application lacks proper validation of user-supplied data when parsing fonts. This could lead to an out-of-bounds write via an uninitialized pointer. An attacker could leverage this vulnerability to execute code in the context of the current process.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-224-02">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>05.04.2021: Report sent to ICS-CERT/CISA.<br />
+			12.04.2021: Asking ICS-CERT/CISA for a confirmation.<br />
+			20.04.2021: Asking ICS-CERT/CISA for a confirmation, attaching again the report.<br />
+			21.04.2021: Received tracking number from ICS-CERT/CISA.<br />
+			11.05.2021: Asking ICS-CERT/CISA for a status update.<br />
+			25.05.2021: Asking ICS-CERT/CISA for a status update.<br />
+			10.06.2021: Asking ICS-CERT/CISA for a status update.<br />
+			17.06.2021: ICS-CERT informs me that the vendor has been unresponsive, and that the report was forwarded to the vendor on 26.04.<br />
+			17.06.2021: Informing ICS-CERT that we should publish next week since the vendor is unresponsive and about 10 weeks have already passed since the report was originally provided by me.<br />
+			17.06.2021: ICS-CERT informs me that they have now received a response from the vendor, and that they are considering a 90 day timeline for fixing the vulnerabilities.<br />
+			25.07.2021: Asking ICS-CERT if the advisory will be published on 26.07. due to the 90 day timeline mentioned in the previous email.<br />
+			26.07.2021: ICS-CERT informs me that the vendor plans to release an update next week and that ICS-CERT will provide an advisory draft this week.<br />
+			03.08.2021: Asking ICS-CERT/CISA for a status update, pointing out that the vendor seems to already have released security patches.<br />
+			10.08.2021: Asking ICS-CERT/CISA for a status update.<br />
+			10.08.2021: ICS-CERT provides an advisory draft and informs me that the advisory will be published on 12.08.<br />
+			12.08.2021: Public release of security advisory.<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
