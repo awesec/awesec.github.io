@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Siemens Solid Edge Multiple XML External Entity Processing Information Disclosure Vulnerabilities<span class="small">AWE-2021-029</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-37178</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Siemens</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>Solid Edge</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; 221.00.00.114</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>SE2021MP7</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>Solid Edge suffers from multiple XML External Entity (XXE) injection vulnerabilities, which are collectively tracked under CVE-2021-37178, when certain XML files are being parsed. Due to the improper restriction of XXE references, it is possible to exfiltrate arbitrary files from the file system in the context of the user under which the application is being executed.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://cert-portal.siemens.com/productcert/pdf/ssa-818688.pdf">SSA-818688: Multiple Vulnerabilities in Solid Edge before SE2021MP7</a>
+			<a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-222-08">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>27.03.2021: Report sent to ICS-CERT/CISA<br />
+			30.03.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			12.04.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			20.04.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			21.04.2021: Received tracking number from ICS-CERT/CISA<br />
+			22.04.2021: ICS-CERT informs me that Siemens has acknowledged the receipt of the report<br />
+			11.05.2021: Asking ICS-CERT/CISA for a status update<br />
+			10.06.2021: Asking ICS-CERT/CISA for a status update<br />
+			23.07.2021: ICS-CERT/CISA informs me that Siemens will have a patch release in the next few weeks which will fix the reported security issues<br />
+			19.08.2021: Asking ICS-CERT/CISA for a status update<br />
+			19.08.2021: ICS-CERT informs me that the advisory has been published on 10.08.<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
