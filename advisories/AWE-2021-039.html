@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>VISAM Automation Base (VBASE) Reflected Cross-site Scripting Vulnerability<span class="small">AWE-2021-039</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>-</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>VISAM GmbH</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>VISAM Automation Base (VBASE) Server</td>
+		  </tr>
+		  <tr>
+			<th>Tested version</th>
+			<td>v11.6.0.6</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>n/a</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>VBASE suffers from a reflected cross-site scripting vulnerability when requesting a non-existing resource. The error message returns the payload without encoding it. User interaction is required to exploit this vulnerability.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://us-cert.cisa.gov/ics/advisories/icsa-20-084-01">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			29.03.2021: Report sent to ICS-CERT/CISA.<br />
+			30.03.2021: Asking ICS-CERT/CISA for a confirmation.<br />
+			12.04.2021: Asking ICS-CERT/CISA for a confirmation.<br />
+			20.04.2021: Sent report again to ICS-CERT/CISA.<br />
+			21.04.2021: Received tracking number from ICS-CERT/CISA.<br />
+			11.05.2021: Asking ICS-CERT/CISA for a status update.<br />
+			25.05.2021: Asking ICS-CERT/CISA for a status update.<br />
+			10.06.2021: Asking ICS-CERT/CISA for a status update.<br />
+			24.06.2021: Asking ICS-CERT/CISA for a status update.<br />
+			12.07.2021: Asking ICS-CERT/CISA for a status update.<br />
+			12.07.2021: ICS-CERT informs me that the vendor provided a patch for some of the issues in April 2021 (v11.7.0.1) and that some of them have been previously reported by a different researcher in July 2020. They also informed me that they have not received replies to follow-up emails sent to the vendor for more details.<br />
+			21.07.2021: ICS-CERT informs me that the v11.7.0.1 release only fixed the path traversal vulnerability. From the vulnerabilities that I reported to ICS-CERT/CISA, the following vulnerabilities were previously reported by Gjoko Krstic of Applied Risk: CVE-2020-7008, CVE-2020-10601, CVE-2020-7000.<br />
+			25.07.2021: Requesting ICS-CERT to proceed with public disclosure of remaining reported vulnerabilities.<br />
+			03.08.2021: Asking ICS-CERT/CISA for a status update.<br />
+			11.08.2021: Asking ICS-CERT/CISA for a status update.<br />
+			19.08.2021: Asking ICS-CERT/CISA for a status update.<br />
+			30.08.2021: Asking ICS-CERT/CISA for a status update.<br />
+			10.09.2021: Asking ICS-CERT/CISA for a status update.<br />
+			18.09.2021: Public disclosure of security advisory.<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
