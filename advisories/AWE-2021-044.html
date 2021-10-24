@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Delta Electronics DIALink Multiple DLL Hijacking Vulnerabilities<span class="small">AWE-2021-044</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-38416</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Delta Electronics</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>DIALink</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v1.2.4.0</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>n/a</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>The application is prone to multiple DLL hijacking vulnerabilities. Combined with the weak file and folder permissions (see CVE-2021-38420), a local low-privileged attacker can easily escalate privileges to NT AUTHORITY\SYSTEM.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-294-02">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			03.05.2021: Report sent to ICS-CERT/CISA<br />
+			11.05.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			25.05.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			10.06.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			11.06.2021: Received tracking number from ICS-CERT/CISA. ICS-CERT/CISA asks to send the report again.<br />
+			11.06.2021: Report sent again to ICS-CERT/CISA<br />
+			17.06.2012: Asking ICS-CERT/CISA for a confirmation<br />
+			17.06.2021: Received acknowledgement from ICS-CERT/CISA<br />
+			14.07.2021: Asking ICS-CERT/CISA for a status update<br />
+			25.07.2021: Asking ICS-CERT/CISA for a status update<br />
+			26.07.2021: ICS-CERT/CISA informs me that my report was forwarded to the vendor on 01.07., but that there has been no response so far, and that they will follow up with the vendor again.<br />
+			27.07.2021: ICS-CERT/CISA informs me that the vendor plans to provide patches on Sep. 30, 2021<br />
+			31.08.2021: ICS-CERT/CISA provided a draft of the security advisory<br />
+			31.08.2021: Provided feedback<br />
+			07.09.2021: ICS-CERT/CISA provided me with feedback from the vendor, indicating that there are no plans to fix the reported issues in 2021 and that ICS-CERT plans to keep the originally scheduled release date of Sep. 30<br />
+			07.09.2021: Asking ICS-CERT/CISA to publish the advisory on 09.09., since there is no reason to wait longer if the vendor doesn't plan to release security patches this year anyway<br />
+			14.09.2021: ICS-CERT/CISA asks me to reconsider publication date for Q1 2022<br />
+			15.09.2021: Informing ICS-CERT/CISA that the vendor had sufficient time to address these issues and asking them to sticking to the previously agreed upon date for public disclosure on 30 September.<br />
+			15.09.2021: ICS-CERT/CISA informs me again that they recommend to wait until the vendor provides a patch<br />
+			15.09.2021: Asking ICS-CERT/CISA for CVEs, so that I can include them in my advisories<br />
+			27.09.2021: Asking ICS-CERT/CISA again for CVEs<br />
+			04.10.2021: Asking ICS-CERT/CISA again for CVEs<br />
+			05.10.2021: ICS-CERT/CISA provides a notification draft (including CVEs), and mentions publication date of 21.10.<br />
+			21.10.2021: Public release of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
