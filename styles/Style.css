@@ -1075,15 +1075,18 @@ table.info-table{
 }
 
 .info-table td a{
-	display: block;
 	color: #78ddcc;
 }
 
-.info-table td a:hover{
+.resources td a{
+	display: block;	
+}
+
+.resources td a:hover{
 	color: #58a397;
 }
 
-.info-table td a::after{
+.resources td a::after{
 	content:url(../images/link.svg);
 	margin:0 3px;
 }
