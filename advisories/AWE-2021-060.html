@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Eurotherm by Schneider Electric GUIcon GD1 File Parsing Out-of-Bounds Write Vulnerability<span class="small">AWE-2021-060</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-22807</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Eurotherm by Schneider Electric</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>GUIcon</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v2.0 (Build 683.003)</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>n/a</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>An out-of-bounds write vulnerability exists that could result in arbitrary code execution due to lack of input validation, when a malicious GD1 file is opened with GUIcon.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-313-02">ICS-CERT/CISA Advisory</a><br /><a href="https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-313-07">Schneider Electric Security Notification</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			27.05.2021: Report sent to Schneider Electric<br />
+			27.05.2021: Schneider Electric provides acknowledgement and tracking ID<br />
+			17.06.2021: Asking for a status update<br />
+			18.06.2021: Schneider Electric is preparing an action plan for the reported security issues<br />
+			30.06.2021: Schneider Electric informs me that they are still working on the action plan and mitigations<br />
+			25.07.2021: Asking for a status update<br />
+			26.07.2021: Schneider Electric informs me that they will provide a specific schedule later this week<br />
+			30.07.2021: Schneider Electric informs me that they are still working on a disclosure strategy<br />
+			02.08.2021: Schneider Electric informs me that they will only contact their affected customers directly<br />
+			02.08.2021: Asking Schneider Electric if my understanding is correct in that they won't contact ICS-CERT/CISA nor issue a public security notifcation<br />
+			02.08.2021: Schneider Electric confirms my understanding and highlights that this is the best option in their view; The vendor asks if I have any concerns with this.<br />
+			03.08.2021: Clarifying my concerns and asking for a public security notification<br />
+			03.08.2021: Schneider Electric replies that they will re-evaluate their decision<br />
+			13.08.2021: Schneider Electric informs me that they won't change their decision<br />
+			13.08.2021: Contacting ICS-CERT/CISA, asking for assistance<br />
+			16.08.2021: Received tracking number from ICS-CERT/CISA<br />
+			30.08.2021: Asking ICS-CERT/CISA for a status update<br />
+			10.09.2021: Asking ICS-CERT/CISA for a status update<br />
+			15.09.2021: ICS-CERT/CISA informs me that they got feedback from Schneider Electric, which reiterated the same that they told me - they won't inform the public about the security vulnerabilities<br />
+			27.09.2021: Asking ICS-CERT/CISA for a status update<br />
+			01.10.2021: ICS-CERT/CISA informs me that they are working with the vendor<br />
+			15.10.2021: Asking ICS-CERT/CISA for a status update<br />
+			15.10.2021: ICS-CERT/CISA informs me that the vendor will publish a security notification<br />
+			03.11.2021: ICS-CERT/CISA provides a draft of the security advisory and mentions disclosure date to be scheduled for 9.11.<br />
+			09.11.2021: Public disclosure of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
