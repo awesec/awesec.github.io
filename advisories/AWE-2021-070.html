@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>mySCADA myPRO OS Command Injection Vulnerability<span class="small">AWE-2021-070</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-43981</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>mySCADA</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>myPRO</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v8.20.0</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>v8.22.0</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>The application is vulnerable to an OS command injection within the email notification feature. An unauthenticated remote attacker can exploit this issue to inject arbitrary OS commands which will get executed in the context of NT AUTHORITY\SYSTEM on Windows systems and in the context of root on Linux systems.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://www.cisa.gov/uscert/ics/advisories/icsa-21-355-01">ICS-CERT/CISA Advisory</a><br /><a href="https://www.myscada.org/version-8-22-0-released-security-update/">mySCADA Release Notes</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			09.08.2021: Report sent to ICS-CERT/CISA<br />
+			12.08.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			16.08.2021: Received tracking number from ICS-CERT/CISA<br />
+			24.08.2021: Asking ICS-CERT/CISA for a status update<br />
+			31.08.2021: ICS-CERT informs me that the vendor validated the issues and that they are working on fixes<br />
+			27.09.2021: Asking ICS-CERT/CISA for a status update<br />
+			04.10.2021: Asking ICS-CERT/CISA for a status update<br />
+			05.10.2021: ICS-CERT informs me that the vendor is working on fixes and that they will ask the vendor if they are on schedule for release within the first week of November<br />
+			26.10.2021: Asking ICS-CERT/CISA for a status update<br />
+			03.11.2021: Asking ICS-CERT/CISA for a status update<br />
+			09.11.2021: ICS-CERT/CERT asks for clarification<br />
+			09.11.2021: Provided clarification, asking again for confirmation of disclosure date<br />
+			11.11.2021: ICS-CERT/CERT asks for clarification<br />
+			11.11.2021: Provided clarification<br />
+			18.11.2021: Asking ICS-CERT/CISA for a status update<br />
+			18.11.2021: ICS-CERT/CISA informs me that they sent an advisory draft to the vendor for review<br />
+			25.11.2021: Asking ICS-CERT/CISA for a status update<br />
+			06.12.2021: Asking ICS-CERT/CISA for a status update<br />
+			13.12.2021: Asking ICS-CERT/CISA for a status update<br />
+			14.12.2021: ICS-CERT/CISA provides the advisory draft and publication date of 21.12.<br />
+			21.12.2021: Public disclosure of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
