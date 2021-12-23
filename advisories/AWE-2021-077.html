@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Horner Automation Cscape EnvisionRV HMI File Parsing Out-of-Bounds Read Vulnerability <span class="small">AWE-2021-077</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-44462</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Horner Automation</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>Cscape EnvisionRV</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v4.50.3.1</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>v4.60</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>The specific flaw exists within the parsing of HMI files. The issue results from the lack of proper validation of user-supplied data, which can result in a read past the end of an allocated data structure. Local attackers are able to exploit this issue to  disclose information and to potentially execute arbitrary code on affected installations of Cscape EnvisionRV. User interaction is required to exploit the vulnerability in that a user must open a malicious HMI file.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://www.cisa.gov/uscert/ics/advisories/icsa-21-355-02">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>27.08.2021: Report sent to ICS-CERT/CISA<br />
+			03.09.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			04.09.2021: ICS-CERT/CISA informs me that they didn't get the report and asked me to send it again; Received tracking number<br />
+			04.09.2021: Report sent again to ICS-CERT/CISA<br />
+			07.09.2021: ICS-CERT/CISA confirms the receipt of the report<br />
+			27.09.2021: Asking ICS-CERT/CISA for a status update<br />
+			01.10.2021: ICS-CERT informs me that the vendor fixed the issues and is doing a final validation<br />
+			15.10.2021: Asking ICS-CERT/CISA for a status update<br />
+			26.10.2021: Asking ICS-CERT/CISA for a status update<br />
+			26.10.2021: ICS-CERT/CISA informs me that the vendor fixed the issues and is doing a final validation<br />
+			02.11.2021: ICS-CERT/CISA informs me that the vendor will release an updated version at the beginning of December<br />
+			06.12.2021: Asking ICS-CERT/CISA for a status update<br />
+			13.12.2021: Asking ICS-CERT/CISA for a status update<br />
+			15.12.2021: ICS-CERT/CISA provides an advisory draft, which combined all 12 reported issues in a single entry, with CWE-20 and CVE-2021-44462. ICS-CERT/CISA further explains that all vulnerabilities are within the parser and therefore decided to group everything together under the label of missing input validation, as that is the root of the problem. Further, they ask me to review the draft and provide my feedback.<br />
+			15.12.2021: Clarifying to ICS-CERT/CISA, that, in my opinion, it doesn't make sense to combine multiple different vulnerabilities into a single entry, without specifically listing the vulnerability types and number of vulnerabilities addressed. I further explained that this makes it difficult for any affected customers to correctly assess the potential risk, as the advisory data is incomplete, and that there are multiple different vulnerability types (Uninitialized Pointers, Out-of-Bound Reads, and Out-of-Bound Writes), different root causes and different exploit primitives.<br />
+			20.12.2021: Asking ICS-CERT/CISA for an updated advisory draft<br />
+			21.12.2021: Public release of security advisory by ICS-CERT/CISA, using the original draft that combined all issues within a single entry<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2021 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
