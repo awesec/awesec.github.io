@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>OMRON CX-Programmer CXP File Parsing Use-after-Free Vulnerability<span class="small">AWE-2022-004</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2022-25230</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>OMRON</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>CX-Programmer</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v9.76.1</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>v9.77</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>A use-after-free vulnerability exists that could result in arbitrary code execution due to lack of input validation, when a malicious CXP file is opened with CX-Programmer.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://jvn.jp/vu/JVNVU90121984/index.html">JPCERT/CC Advisory (JP)</a><br /><a href="https://jvn.jp/en/vu/JVNVU90121984/index.html">JPCERT/CC Advisory (EN)</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			29.05.2021: Report sent to JPCERT/CC<br />
+			10.06.2021: Received acknowledgement and tracking number from JPCERT/CC<br />
+			14.07.2021: Asking JPCERT/CC for a status update<br />
+			03.09.2021: JPCERT/CC informs me that the vendor is working on a fix<br />
+			01.10.2021: Asking JPCERT/CC for a status update<br />
+			04.10.2021: JPCERT/CC informs me that they will contact the vendor to ask for an update<br />
+			05.10.2021: JPCERT/CC informs me that the vendor will fix the vulnerability likely in January 2022<br />
+			06.01.2022: Asking JPCERT/CC for a status update<br />
+			10.01.2022: JPCERT/CC informs me that they will follow up with the vendor<br />
+			08.02.2022: Asking JPCERT/CC for a status update<br />
+			08.02.2022: JPCERT/CC informs me that they will follow up again with the vendor, as they haven't received any feedback<br />
+			14.02.2022: JPCERT/CC informs me that the vendor has published updates for the vulnerabilities in January, and that they will prepare an advisory draft for publication<br />
+			21.02.2022: JPCERT/CC provides an update to confirm the vulnerability details<br />
+			22.02.2022: Providing confirmation<br />
+			02.03.2022: JPCERT/CC provides final advisory draft and publication date of March 4, 2022.<br />
+			04.03.2022: Public release of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2022 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
