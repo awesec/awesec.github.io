@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Delta Electronics DIAEnergie SQL Injection Vulnerability<span class="small">AWE-2022-033</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2022-25980</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Delta Electronics</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>DIAEnergie</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#60; 1.08.02.004</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>1.08.02.004</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>An SQL injection vulnerability exists in HandlerCommon.ashx. The application does not properly validate user-controlled input, enabling a remote, unauthenticated attacker to inject arbitrary SQL commands.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://www.cisa.gov/uscert/ics/advisories/icsa-22-081-01">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			30.08.2021: Report sent to ICS-CERT/CISA<br />
+			31.08.2021: Received acknowledgement from ICS-CERT/CISA<br />
+			07.09.2021: ICS-CERT/CISA assigns a new ticket number<br />
+			08.09.2021: ICS-CERT/CISA informs me that the vendor has confirmed the receipt of the reports<br />
+			01.10.2021: Asking ICS-CERT/CISA for a status update<br />
+			15.10.2021: Asking ICS-CERT/CISA for a status update<br />
+			03.11.2021: Asking ICS-CERT/CISA for a status update<br />
+			03.11.2021: ICS-CERT/CISA informs me that they are following up with the vendor<br />
+			04.11.2021: ICS-CERT/CISA informs me that the vendor will not be able to patch the vulnerabilities before June, 2022<br />
+			04.11.2021: Informing ICS-CERT/CISA that I am willing to withhold the advisories until the first week of March 2021, which is 6-7 months since I initially reported the issues - ample time for the vendor to fix the issues<br />
+			04.11.2021: ICS-CERT/CISA confirms that this would be a great compromise<br />
+			08.02.2021: Asking ICS-CERT/CISA for the advisory draft<br />
+			24.02.2022: Asking ICS-CERT/CISA for the advisory draft<br />
+			28.02.2022: ICS-CERT/CISA informs me that they are following up with the vendor<br />
+			08.03.2022: Asking ICS-CERT/CISA for a status update<br />
+			09.03.2022: ICS-CERT/CISA informs me that the vendor plans to release updates on June 30, 2022<br />
+			09.03.2022: Asking ICS-CERT/CISA to proceed with disclosure<br />
+			15.03.2022: ICS-CERT/CISA provides an advisory draft<br />
+			16.03.2022: Asking ICS-CERT/CISA why some issues are combined and missing in the draft<br />
+			22.03.2022: ICS-CERT/CISA informs me that the grouping was done by the vendor, as the same fix was applied for some of the issues. ICS-CERT/CISA published the advisory and informed me afterwards.<br />
+			22.03.2022: Public disclosure of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2022 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
