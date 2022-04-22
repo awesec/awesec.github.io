@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Elcomplus SmartPTT SCADA Authorization Bypass Vulnerability<span class="small">AWE-2022-043</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2021-43939</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Elcomplus</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>SmartPTT</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v1.1</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>v2.3.4</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>An authenticated, low-privileged user of the role Viewer or Dispatcher can bypass authorization and access admin functionality.</td>
+		  </tr>
+		  <tr>
+			<th>Resources</th>
+			<td><a href="https://www.cisa.gov/uscert/ics/advisories/icsa-22-109-04">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			05.04.2021: Report sent to ICS-CERT/CISA<br />
+			06.04.2021: Updated ICS-CERT/CISA that SmartICS, from the same vendor, is affected by the same issues due to shared code base<br />
+			12.04.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			20.04.2021: Asking ICS-CERT/CISA for a confirmation<br />
+			21.04.2021: Received tracking number from ICS-CERT/CISA<br />
+			11.05.2021: Asking ICS-CERT/CISA for a status update<br />
+			25.05.2021: Asking ICS-CERT/CISA for a status update<br />
+			13.07.2021: ICS-CERT/CISA informs me that the vendor accepted the report and plans to patch my findings. They are still waiting to hear from the vendor when the patches are made publicly available.<br />
+			03.08.2021: Asking ICS-CERT/CISA for a status update<br />
+			10.08.2021: Asking ICS-CERT/CISA for a status update<br />
+			19.08.2021: Asking ICS-CERT/CISA for a status update<br />
+			30.08.2021: Asking ICS-CERT/CISA for a status update<br />
+			03.09.2021: ICS-CERT/CISA informs me that they haven't heard from the vendor anymore<br />
+			16.09.2021: ICS-CERT/CISA informs me that the vendor published a "public release" of my findings sometime in the second week of July and that the product was rebranded to SmartICS<br />
+			20.09.2021: ICS-CERT/CISA informs me that all issues have been fixed by the vendor and that they will provide the advisory draft this week<br />
+			27.09.2021: Asking ICS-CERT/CISA for a status update and advisory draft<br />
+			04.10.2021: Asking ICS-CERT/CISA for a status update and advisory draft<br />
+			15.10.2021: Asking ICS-CERT/CISA for a status update and advisory draft<br />
+			26.10.2021: Asking ICS-CERT/CISA for a status update and advisory draft<br />
+			13.11.2021: Asking ICS-CERT/CISA for a status update and advisory draft<br />
+			15.11.2021: ICS-CERT/CISA informs me that the last correspondence with the vendor on 16.09.2021 had an unanswered question and that they will provide the advisory draft to the vendor<br />
+			15.11.2021: Asking ICS-CERT/CISA to also share the advisory draft with me<br />
+			24.11.2021: Asking ICS-CERT/CISA for a status update<br />
+			21.01.2022: Asking ICS-CERT/CISA for a status update<br />
+			08.02.2022: Asking ICS-CERT/CISA for a status update<br />
+			24.02.2022: Asking ICS-CERT/CISA for a status update<br />
+			08.03.2022: Asking ICS-CERT/CISA for a status update<br />
+			10.03.2022: ICS-CERT/CISA informs me that they had multiple attempts to contact the vendor, but that they haven't heard back since December. ICS-CERT/CISA finally provides an advisory draft.<br />
+			14.03.2022: Providing feedback about the advisory draft, highlighting that the same CVEs are assigned for different vulnerabilities in different binaries and endpoints<br />
+			14.03.2022: ICS-CERT/CISA informs me that they will update the draft<br />
+			01.04.2022: Asking ICS-CERT/CISA for a status update<br />
+			04.04.2022: ICS-CERT/CISA informs me that the case was assigned to a new analyst<br />
+			08.04.2022: ICS-CERT/CISA provides an updated advisory draft, but are still using the same CVEs for some of the issues. ICS-CERT/CISA states that this is because those are the same vulnerabilities that the vendor fixed through the same update.<br />
+			08.04.2022: Highlighting again that these are different vulnerabilities, in different binaries, affecting different endpoints<br />
+			11.04.2022: ICS-CERT/CISA replies that they plan to publish the advisory on 19.04. if no reply from the vendor is received<br />
+			19.04.2022: Public disclosure of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2022 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
