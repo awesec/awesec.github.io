@@ -1047,6 +1047,12 @@ tr a:hover{
 	left:50%;
 	transform:translateX(-50%);
 }
+table.advisories th, table.advisories td{
+	text-align:center;
+}
+table.advisories td:nth-child(2){
+	text-align:left;
+}
 
 table.info-table{
 	width:100%;
