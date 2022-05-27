@@ -29,7 +29,7 @@
 		<table class="info-table">
 		  <tr>
 			<th>CVE Number</th>
-			<td>-</td>
+			<td>CVE-2022-30546</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
@@ -57,7 +57,7 @@
 		  </tr>
 		  <tr class="resources">
 			<th>Resources</th>
-			<td><a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-299-01">ICS-CERT/CISA Advisory</a></td>
+			<td><a href="https://us-cert.cisa.gov/ics/advisories/icsa-21-299-01">ICS-CERT/CISA Advisory</a><a href="https://jvn.jp/vu/JVNVU99188133/index.html">JPCERT/CC Advisory (JP)</a><a href="https://jvn.jp/en/vu/JVNVU99188133/index.html">JPCERT/CC Advisory (EN)</a></td>
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
@@ -74,6 +74,8 @@
 			02.10.2021: JPCERT/CC informs me that they will contact the vendor to ask for an update<br />
 			26.10.2021: Asking for a status update, pointing out that ICS-CERT has published advisory icsa-21-299-01<br />
 			27.10.2021: JPCERT/CC explains that Fuji Electric received the same vulnerabilities via ICS-CERT, which in turn received the reports from ZDI, and that Fuji Electric forgot to update JPCERT/CC. JPCERT/CC further states that they contacted Fuji Electric multiple times to identify which of the CVEs are assigned for the specific vulnerabilities that I discovered and reported, but that Fuji Electric has been unresponsive. Moreover, Fuji Electric did not inform JPCERT/CC when ICSA-21-299-01 from ICS-CERT was scheduled to be published.<br />
+			26.05.2022: While trying to identify which specific CVEs match the vulnerabilities that I had identified and reported, it was discovered that none of them were bug collissions and that the initial statement from the vendor wasn't accurate. I'd like to thank JPCERT/CC for their efforts in the vendor communication and coordination process. CVE-2022-30546 was assigned to collectively track all of my reported OOBR issues.<br />
+			Public release of security advisory<br />
 			</td>
 		  </tr>
 		  <tr>
