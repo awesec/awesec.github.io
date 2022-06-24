@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Elcomplus SmartICS Path Traversal Vulnerability<span class="small">AWE-2022-058</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE Number</th>
+			<td>CVE-2022-2106</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Elcomplus</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>SmartICS</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v2.3.4.0</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>v2.4</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>The backup and restore feature of the application is vulnerable to path traversal attacks. An authenticated attacker can potentially exploit this issue to apply arbitrary backup files.</td>
+		  </tr>
+		  <tr class="resources">
+			<th>Resources</th>
+			<td><a href="https://www.cisa.gov/uscert/ics/advisories/icsa-22-174-05">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			22.04.2022: Report sent to ICS-CERT/CISA<br />
+			22.04.2022: ICS-CERT informs me that my report was forwarded to the appropriate office for review<br />
+			14.05.2022: Asking ICS-CERT/CISA for a status update<br />
+			19.05.2022: ICS-CERT/CISA informs me that the vendor has fixed the issues and will release the fixes in the first part of June<br />
+			25.05.2022: ICS-CERT/CISA provides an advisory draft<br />
+			23.06.2022: Public release of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2022 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
