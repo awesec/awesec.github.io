@@ -783,10 +783,24 @@ header a{
 
 .top-content *{line-height:1.25em;}
 
+.top-content.page404{
+	left:0;
+	width:100%;
+}
+
 .top-content h1{
 	font-size:3em;
 	margin:0 auto 60px;
 	animation: glow 3s ease-in-out infinite alternate;
+}
+.top-content.page404 h1{
+	text-align:center;
+	width:100%;
+	display:block;
+}
+
+.top-content.page404 p{
+	text-align:center;
 }
 
 @keyframes glow{
