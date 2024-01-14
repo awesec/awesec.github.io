@@ -24,42 +24,42 @@
 	
 <div class="content-wrap">
 	<div class="content-box">
-		<h1>Horner Automation Cscape <span class="small">AWE-2024-013</span></h1>
+		<h1>Horner Automation Cscape CSP File Parsing Stack-based Buffer Overflow Vulnerability<span class="small">AWE-2024-013</span></h1>
 		<div class="scroll-box">
 		<table class="info-table">
 		  <tr>
 			<th>CVE ID</th>
-			<td>CVE-2023-49121</td>
+			<td>CVE-2023-7206</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
-			<td>Siemens</td>
+			<td>Horner Automation</td>
 		  </tr>
 		  <tr>
 			<th>Product</th>
-			<td>Solid Edge</td>
+			<td>Cscape</td>
 		  </tr>
 		  <tr>
 			<th>Affected version</th>
-			<td>&#x2264; v223.0 Update 9</td>
+			<td>&#x2264; v9.90 SP10</td>
 		  </tr>
 		  <tr>
 			<th>Patched version</th>
-			<td>v223.0 Update 10</td>
+			<td>v9.90 SP11</td>
 		  </tr>
 		  <tr>
 			<th>Summary</th>
-			<td>The affected application is vulnerable to a heap-based buffer overflow while parsing specially crafted PAR files. An attacker could leverage this vulnerability to execute arbitrary code in the context of the current process.</td>
+			<td>The affected application contains a stack-based buffer overflow vulnerability that could be triggered while parsing specially crafted CSP files. This could allow an attacker to execute arbitrary code in the context of the current process.</td>
 		  </tr>
 		  <tr class="resources">
 			<th>Resources</th>
-			<td><a href="https://cert-portal.siemens.com/productcert/html/ssa-589891.html">Siemens Security Advisory SSA-589891</a></td>
+			<td><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-24-011-04">CISA Advisory ICSA-24-011-04</a></td>
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
 			<td>
-			02.08.2023: Report sent to Siemens ProductCERT<br />
-			09.01.2024: Public release of security advisory <br />
+			03.07.2023: Report sent to CISA<br />
+			11.01.2024: Public release of security advisory <br />
 			</td>
 		  </tr>
 		  <tr>
