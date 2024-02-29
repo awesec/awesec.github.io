@@ -24,42 +24,42 @@
 	
 <div class="content-wrap">
 	<div class="content-box">
-		<h1>Santesoft Sante DICOM Viewer Pro DCM File Parsing Out-of-Bounds Read Vulnerability<span class="small">AWE-2024-022</span></h1>
+		<h1>MicroDicom DICOM Viewer DCM File Parsing Out-of-Bounds Write Vulnerability<span class="small">AWE-2024-023</span></h1>
 		<div class="scroll-box">
 		<table class="info-table">
 		  <tr>
 			<th>CVE ID</th>
-			<td>CVE-2024-1453</td>
+			<td>CVE-2024-25578</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
-			<td>Santesoft</td>
+			<td>MicroDicom</td>
 		  </tr>
 		  <tr>
 			<th>Product</th>
-			<td>Sante DICOM Viewer Pro</td>
+			<td>DICOM Viewer</td>
 		  </tr>
 		  <tr>
 			<th>Affected version</th>
-			<td>&#x2264; v14.0.3</td>
+			<td>&#x2264; v2023.3 (Build 9342)</td>
 		  </tr>
 		  <tr>
 			<th>Patched version</th>
-			<td>v14.0.4</td>
+			<td>v2024.1</td>
 		  </tr>
 		  <tr>
 			<th>Summary</th>
-			<td>The affected application lacks proper validation of user-supplied data when parsing DICOM files. This could lead to an out-of-bounds read. An attacker could leverage this vulnerability to potentially execute arbitrary code in the context of the current process.</td>
+			<td>The affected application lacks proper validation of user-supplied data when parsing DICOM files. This could lead to an out-of-bounds write. An attacker could leverage this vulnerability to potentially execute arbitrary code in the context of the current process.</td>
 		  </tr>
 		  <tr class="resources">
 			<th>Resources</th>
-			<td><a href="https://www.cisa.gov/news-events/ics-medical-advisories/icsma-24-058-01">ICSMA-24-058-01</a></td>
+			<td><a href="https://www.cisa.gov/news-events/ics-medical-advisories/icsma-24-060-01">ICSMA-24-060-01</a></td>
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
 			<td>
 			17.12.2023: Report sent to CISA<br />
-			27.02.2024: Public release of security advisory <br />
+			29.02.2024: Public release of security advisory <br />
 			</td>
 		  </tr>
 		  <tr>
