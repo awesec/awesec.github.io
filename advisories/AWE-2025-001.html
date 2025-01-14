@@ -24,42 +24,42 @@
 	
 <div class="content-wrap">
 	<div class="content-box">
-		<h1>Horner Automation Cscape CSP File Parsing Out-of-Bounds Read Vulnerability<span class="small">AWE-2024-091</span></h1>
+		<h1>OMRON NB-Designer XML External Entity Processing Information Disclosure Vulnerability<span class="small">AWE-2025-001</span></h1>
 		<div class="scroll-box">
 		<table class="info-table">
 		  <tr>
 			<th>CVE ID</th>
-			<td>CVE-2024-9508</td>
+			<td>CVE-2024-12298</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
-			<td>Horner Automation</td>
+			<td>OMRON</td>
 		  </tr>
 		  <tr>
 			<th>Product</th>
-			<td>Cscape</td>
+			<td>NB-Designer</td>
 		  </tr>
 		  <tr>
 			<th>Affected version</th>
-			<td>&#x2264; v10.0.363.1</td>
+			<td>&#x2264; 1.63</td>
 		  </tr>
 		  <tr>
 			<th>Patched version</th>
-			<td>v10 SP1</td>
+			<td>1.64</td>
 		  </tr>
 		  <tr>
 			<th>Summary</th>
-			<td>The affected application lacks proper validation of user-supplied data when parsing CSP files. This could lead to an out-of-bounds read in the GraphicsSaveScreen component. An attacker could leverage this vulnerability to potentially disclose information or to execute arbitrary code in the context of the current process.</td>
+			<td>The application suffers from an XML External Entity (XXE) injection vulnerability when a project file is loaded. Due to the improper restriction of XXE references, it is possible to exfiltrate arbitrary files from the file system in the context of the user under which the application is being executed.</td>
 		  </tr>
 		  <tr class="resources">
 			<th>Resources</th>
-			<td><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-24-345-05">ICSA-24-345-05</a></td>
+			<td><a href="https://jvn.jp/vu/JVNVU98734299/">JPCERT/CC Advisory JVNVU#98734299 (JP)</a><a href="https://jvn.jp/en/vu/JVNVU98734299/">JPCERT/CC Advisory JVNVU#98734299 (EN)</a></td>
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
 			<td>
-			12.08.2024: Report sent to CISA<br />
-			10.12.2024: Public release of security advisory<br />
+			10.07.2024: Report sent to JPCERT/CC<br />
+			14.01.2025: Public release of security advisory<br />
 			</td>
 		  </tr>
 		  <tr>
@@ -72,7 +72,7 @@
 </div>	
 
 <footer>
-  <p class="copyrights">© 2024 AWESEC. ALL RIGHTS RESERVED.</p>
+  <p class="copyrights">© 2025 AWESEC. ALL RIGHTS RESERVED.</p>
 </footer>
 </div>
 </body>
