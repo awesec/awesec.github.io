@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>aweSEC | Security Advisories</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<link href="../styles/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="Advisories" class="pages advisories">
+		<header>
+				<div class="main-menu">
+					<ul class="menu-list">
+						<li class="logo"><img src="../images/logomark-hol-wt.svg" alt="aweSEC logo mark" width="200"></li>
+						<li class="page-link"><a href="../index.html">HOME</a></li>
+						<li class="page-link"><a href="../advisories.html">ADVISORIES</a></li>
+						<li class="page-link"><a href="../index.html#contact">CONTACT</a></li>
+					</ul>
+				</div>
+			</header>
+	
+<div class="content-wrap">
+	<div class="content-box">
+		<h1>Schneider Electric EcoStruxure Power Build Rapsody SSD File Parsing Memory Corruption Vulnerability<span class="small">AWE-2025-003</span></h1>
+		<div class="scroll-box">
+		<table class="info-table">
+		  <tr>
+			<th>CVE ID</th>
+			<td>CVE-2024-11139</td>
+		  </tr>
+		  <tr>
+			<th>Vendor</th>
+			<td>Schneider Electric</td>
+		  </tr>
+		  <tr>
+			<th>Product</th>
+			<td>EcoStruxure Power Build Rapsody</td>
+		  </tr>
+		  <tr>
+			<th>Affected versions</th>
+			<td>&#x2264; v2.5.2 NL<br />&#x2264; v2.7.1 FR<br />&#x2264; v2.7.5 ES<br />&#x2264; v2.5.4 INT</td>
+		  </tr>
+		  <tr>
+			<th>Patched versions</th>
+			<td>v2.7.2 NL<br />v2.7.12 FR<br />v2.7.52 ES<br />N/A for INT</td>
+		  </tr>
+		  <tr>
+			<th>Summary</th>
+			<td>A memory corruption vulnerability exists in EcoStruxure Power Build Rapsody when parsing SSD files. The issue can potentially be exploited to execute arbitrary code, but requires a legitimate user to open a malicious SSD file.</td>
+		  </tr>
+		  <tr class="resources">
+			<th>Resources</th>
+			<td><a href="https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2025-014-09&p_enDocType=Security+and+Safety+Notice&p_File_Name=SEVD-2025-014-09.pdf">SEVD-2025-014-09</a></td>
+		  </tr>
+		  <tr>
+			<th>Timeline (abridged)</th>
+			<td>
+			27.11.2023: Report with five vulnerabilities sent to CISA.<br />
+			18.12.2023: Vendor states that they reviewed one issue, a stack-based buffer overflow, and cannot reproduce it.<br />
+			21.12.2023: Vendor states that two of the reported issues were reviewed and are false positives. Moreover, they state that the other issues cannot be assessed by them, because "only hexadecimal addresses were provided".<br />Note: Vendor is referring to the debugging and disassembly listings included in the report (which also had the proof-of-concept files attached to trigger each highlighted issue) that was shared with them.<br />
+			09.01.2024: Vendor states that the issues cannot be reproduced. Vendor further states that if the issues could be reproduced, they would have low occurrence and criticality scores, and "would not do any damage to existing projects, existing rapsody installation or the OS". Moreover, they state that "no remote code that could be executed because DEP (Data Execution Prevention) is enabled".<br />
+			19.01.2024: Vendor asked their internal pentest team to verify the issues I reported.<br />
+			05.02.2024: Vendor states that their pentest team was able to confirm all reported vulnerabilities.<br />
+			07.02.2024: Vendor states that from the CVSS properties for Confidentiality, Integrity, and Availability, the memory corruption issues only have a low impact on Confidentiality, but that Integrity and Availability are not affected.<br />
+			22.02.2024: Vendor states that crafting a ROP chain requires significant tooling and effort.<br />
+			28.02.2024: Vendor states that the issues will be fixed, but due to the low CVSS score, no CVE will be assigned.<br />
+			05.03.2024: Vendor states they did an internal reevaluation, and revised the CVSS score, and are going to assign one CVE.<br />
+			26.09.2024: Vendor states that all five reported vulnerabilities have the same root cause, and therefore only assign one CVE.<br />
+			14.01.2025: Public release of security advisory<br />
+			</td>
+		  </tr>
+		  <tr>
+			<th>Credit</th>
+			<td>Michael Heinzl</td>
+		  </tr>
+		</table>
+	</div>
+	</div>
+</div>	
+
+<footer>
+  <p class="copyrights">© 2025 AWESEC. ALL RIGHTS RESERVED.</p>
+</footer>
+</div>
+</body>
+</html>
