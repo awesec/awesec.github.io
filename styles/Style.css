@@ -460,6 +460,11 @@ template {
 
 
 /*style.css*/
+/*matrix*/
+body{margin:0;/*overflow:hidden;*/background:rgba(10, 110, 95, 0.35);color:#fff;display:block;position:relative;}
+canvas{display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+/*#footerLink{position:absolute;bottom:20px;font-size:20px;color:#f0f;text-decoration:none;z-index:2}
+#footerLink:hover{text-shadow:0 0 10px #f0f}*/
 
 html {
 	background-image:url("../images/bg.jpg"),linear-gradient( to top, rgba(255,255,255,0),  #434343 ); 
@@ -477,6 +482,9 @@ html {
 
 body{
 	min-height: 100%;
+}
+body>div{
+ width:100%;
 }
 
 span{
@@ -884,7 +892,15 @@ background:transparent;
 
 
 .about{
-	background:linear-gradient(-75deg,rgba(111,117,116,0.8) 0%,rgba(111,117,116,0.8) 50%,rgba(31,182,165,0.8) 50%,rgba(31,182,165,0.8) 100%);
+	background:linear-gradient(-75deg,rgba(111,117,116,0.3) 0%,rgba(111,117,116,0.8) 20%, rgba(111,117,116,0.9) 50%,rgba(31,182,165,0.9) 50%,rgba(31,182,165,0.8) 80%, rgba(31,182,165,0.3) 100%);
+	/*background:linear-gradient(-75deg,rgba(111,117,116,0.3) 0%,rgba(111,117,116,0.8) 20%, rgba(111,117,116,0.9) 50%,rgba(51, 131, 108,0.9) 50%,rgba(51, 131, 108,0.8) 80%, rgba(51, 131, 108,0.3) 100%);*/
+	z-index: 1;
+    margin-top: 50vh;
+    position: relative;
+}
+
+.about h2{
+	line-height:1.25em;
 }
 
 .about .list-box-2:first-child{
@@ -1008,6 +1024,7 @@ background:transparent;
 #AdvisoriesTop th{
 	background-color: rgba(31,182,165, 1);
 	color:#434343;
+	text-align: center;
 }
 
 #AdvisoriesTop th:not(:last-child){
@@ -1026,8 +1043,14 @@ background:transparent;
 
 tr a:hover{
 	cursor: pointer;
-	color:#32b4a5;
+	/*color:#32b4a5;*/
+	color:#35857b;
 }
+tr a{
+	/*color:#32b4a5;*/
+	color:#5be6d7;
+}
+
 
 #AdvisoriesTop td:nth-child(2)::after{
 	margin-left: 5px;
@@ -1038,7 +1061,84 @@ tr a:hover{
 }
 
 
+
 /*advisories*/
+select#year{
+	display: inline-block;
+    margin: 0 auto;
+    background: rgba(153, 207, 185, 0.1);
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent;
+    padding:0.25em 0.8em 0.25em 1.6em;
+    border-radius: 1.5em;
+    position: relative;
+    color: white;
+	box-shadow: 6px 6px 10px rgba(18, 47, 61, 0.2),
+	-6px -6px 10px rgba(180, 226, 217, 0.25),
+	inset 6px 6px 10px transparent,
+	inset -6px -6px 10px transparent;
+}
+select#year option{
+	background: #35857b;
+	font-size: 0.8em;
+	padding: 6px 0;
+}
+select#year:focus-visible{
+	border-color: transparent;
+	outline: none;
+	background:transparent;
+	box-shadow:inset 6px 6px 15px rgba(4, 40, 29, 0.1),inset 6px 6px 3px rgba(4, 40, 29, 0.1),inset -6px -6px 2px rgba(4, 40, 29, 0.05);
+	cursor: pointer;
+}
+select#year:hover{
+	background:transparent;
+	box-shadow:inset 6px 6px 15px rgba(4, 40, 29, 0.1),inset 6px 6px 3px rgba(4, 40, 29, 0.1),inset -6px -6px 2px rgba(4, 40, 29, 0.05);
+	cursor: pointer;
+}
+
+
+.content-wrap div.select{
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 22px;
+	margin-bottom: 2em;
+}
+
+.select::after{
+	width:10px;
+	height:10px;
+	display: inline-block;
+	margin-left: 5px;
+	content: url(../images/caret-down-solid.svg);
+	position: absolute;
+	top: 11px;
+	transform: translateY(-50%);
+    left: .5em;
+}
+
+.ContentsYear{
+	display: none;
+}
+
+.ContentsYear.showed{
+	display: block;
+}
+
+.ContentsYear.showed + .advisories{
+	margin-top:2em;
+}
+
+.ContentsYear table td{
+	text-align: center;
+}
+
+.ContentsYear table td:nth-child(2){
+	text-align: left;
+}
 
 .pages.advisories .content-wrap:first-of-type {
 	background: url(../images/right.png) left -30px bottom -50px/300px no-repeat,linear-gradient(to top, rgba(97, 102, 101, 0.9), rgba(56, 65, 64, 0.8));
@@ -1060,12 +1160,6 @@ tr a:hover{
 	bottom:-1em;
 	left:50%;
 	transform:translateX(-50%);
-}
-table.advisories th, table.advisories td{
-	text-align:center;
-}
-table.advisories td:nth-child(2){
-	text-align:left;
 }
 
 table.info-table{
@@ -1112,6 +1206,31 @@ table.info-table{
 }
 
 
+
+/*exploits*/
+
+#AdvisoriesTop .exploits th:first-child{
+	width:70%;
+}
+#AdvisoriesTop .exploits th:last-child{
+	width:30%;
+}
+
+#AdvisoriesTop .exploits td:nth-child(2)::after {
+    margin-left: 0px;
+    width: 0px;
+    height: 0px;
+	content:none;
+}
+#AdvisoriesTop .exploits td:first-child::after {
+    margin-left: 5px;
+    content: url(../images/file-text.svg);
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+
 @media screen and (max-width:1024px){
 
 .top-content h1{
@@ -1121,9 +1240,7 @@ table.info-table{
     padding: 30px;
 }
 
-.about h2{
-	line-height:1.25em;
-}
+
 }
 
 @media screen and (max-width:768px){
