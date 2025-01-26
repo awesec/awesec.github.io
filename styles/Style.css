@@ -837,6 +837,10 @@ header a{
 	margin:1rem 0;	
 }
 
+.pages .content-wrap{
+	min-height: calc(100vh - 3em - 80px);
+}
+
 .content-box{
 	max-width:60rem;
 	margin:0 auto;
@@ -895,7 +899,6 @@ background:transparent;
 	background:linear-gradient(-75deg,rgba(111,117,116,0.3) 0%,rgba(111,117,116,0.8) 20%, rgba(111,117,116,0.9) 50%,rgba(31,182,165,0.9) 50%,rgba(31,182,165,0.8) 80%, rgba(31,182,165,0.3) 100%);
 	/*background:linear-gradient(-75deg,rgba(111,117,116,0.3) 0%,rgba(111,117,116,0.8) 20%, rgba(111,117,116,0.9) 50%,rgba(51, 131, 108,0.9) 50%,rgba(51, 131, 108,0.8) 80%, rgba(51, 131, 108,0.3) 100%);*/
 	z-index: 1;
-    margin-top: 50vh;
     position: relative;
 }
 
@@ -1189,7 +1192,8 @@ table.info-table{
 }
 
 .info-table td a{
-	color: #78ddcc;
+	/*color: #78ddcc;*/
+	color: #5be6d7;
 }
 
 .resources td a{
