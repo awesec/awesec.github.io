@@ -24,8 +24,12 @@
 	</div>
 
 </header>
-<canvas id="matrixCanvas" width="2195" height="1108"></canvas>
-
+<div class="top-img">
+	<div class="top-content">
+		<h1>hic sunt dracones</h1>
+		<p>Security R&amp;D &#10022; Program Analysis &#10022; Exploit Development</p>
+	</div>
+</div>	
 	
 <div class="content-wrap about">
 	<div class="row flex-box">
@@ -63,108 +67,6 @@
   <p class="copyrights">© 2024 AWESEC. ALL RIGHTS RESERVED.</p>
 </footer>
 </div>
-<script>
-	const canvas = document.getElementById('matrixCanvas');
-	const ctx = canvas.getContext('2d');
-	const scaleFactor = window.devicePixelRatio || 1;
-	canvas.width = window.innerWidth;
-	canvas.height = document.body.clientHeight;
-
-	const fontSize = 20;
-	const columns = Math.floor(canvas.width / fontSize);
-	const drops = Array(columns).fill().map(() => (Math.random() > 0.95 ? 0 : Math.floor(-Math.random() * 50)));
-
-	const characters = ("0123456789@#$%^&ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾐﾑﾒﾓﾔﾕﾗﾘﾙﾚﾜｦﾝ");
-	const textContent = 'hic sunt dracones.';
-	let highlightRect = { left: 0, right: 0, top: 0, bottom: 0 };
-
-	let lastTime = 0;
-	const speedFactor = 1.5;
-	
-	function drawCenterText() {
-		ctx.save();
-		ctx.font = `${Math.max(16, canvas.width / 15)}px 'lato', sans-serif`;
-		ctx.fillStyle = 'rgba(255,255,255,0.5)';
-		ctx.textAlign = 'center';
-		ctx.textBaseline = 'middle';
-		const textX = canvas.width * 0.5;
-		const textY = window.innerHeight * 0.35;
-		ctx.fillText(textContent, textX, textY);
-
-		const textWidth = ctx.measureText(textContent).width;
-		highlightRect = {
-			left: textX - textWidth / 2,
-			right: textX + textWidth / 2,
-			top: textY - fontSize,
-			bottom: textY + fontSize,
-		};
-		ctx.restore();
-	}
-
-
-	function draw() {
-		ctx.fillStyle = 'rgb(11 110 82 / 10%)';
-		ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-		ctx.fillStyle = 'rgb(137 247 222 / 80%)';
-		ctx.font = `${fontSize}px 'Yusei Magic', monospace`;
-
-		for (let i = 0; i < drops.length; i++) {
-			const char = characters[Math.floor(Math.random() * characters.length)];
-			const x = i * fontSize;
-			const y = drops[i] * fontSize;
-
-			ctx.fillText(char, x, y);
-
-			if (
-				x >= highlightRect.left &&
-				x <= highlightRect.right &&
-				y >= highlightRect.top &&
-				y <= highlightRect.bottom
-			) {
-				highlightSection(x, y);
-			}
-
-			if (y > canvas.height && Math.random() > 0.975) {
-				drops[i] = 0;
-			}
-
-			drops[i]++;
-		}
-
-		drawCenterText();
-	}
-
-	function highlightSection(x, y) {
-		ctx.save();
-		ctx.fillStyle = 'rgba(231, 255, 250,0.8)';
-		ctx.fillRect(x, y - fontSize, fontSize, fontSize * 2);
-		ctx.restore();
-	}
-
-
-	window.addEventListener('resize', () => {
-		canvas.width = window.innerWidth;
-		canvas.height = document.body.clientHeight;
-		textX = canvas.width * 0.4;
-		textY = window.innerHeight * 0.35;
-		drawCenterText();
-	});
-
-	function animate(currentTime) {
-	  const deltaTime = currentTime - lastTime;
-
-	  if (deltaTime > 80 / speedFactor) {
-		draw();
-		lastTime = currentTime;
-	  }
-
-	  requestAnimationFrame(animate);
-	}
-
-	animate(0);
-
-</script>
 
 
 </body>
