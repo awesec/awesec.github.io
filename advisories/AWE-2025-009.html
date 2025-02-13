@@ -24,42 +24,42 @@
 	
 <div class="content-wrap">
 	<div class="content-box">
-		<h1>Ashlar-Vellum Cobalt, Xenon, Argon, Lithium, Cobalt Share CO File Parsing Out-of-Bounds Write Vulnerability<span class="small">AWE-2025-007</span></h1>
+		<h1>mySCADA myPRO Manager Insecure Storage of Credentials<span class="small">AWE-2025-009</span></h1>
 		<div class="scroll-box">
 		<table class="info-table">
 		  <tr>
 			<th>CVE ID</th>
-			<td>CVE-2023-39943</td>
+			<td>CVE-2025-22896</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
-			<td>Ashlar-Vellum</td>
+			<td>mySCADA</td>
 		  </tr>
 		  <tr>
-			<th>Products</th>
-			<td>Cobalt<br />Xenon<br />Argon<br />Lithium<br />Cobalt Share</td>
+			<th>Product</th>
+			<td>myPRO Manager</td>
 		  </tr>
 		  <tr>
-			<th>Affected versions</th>
-			<td>see references</td>
+			<th>Affected version</th>
+			<td>&#x2264; 1.3</td>
 		  </tr>
 		  <tr>
-			<th>Patched versions</th>
-			<td>see references</td>
+			<th>Patched version</th>
+			<td>1.4</td>
 		  </tr>
 		  <tr>
 			<th>Summary</th>
-			<td>The affected applications contain an out-of-bounds write vulnerability while parsing specially crafted CO files. A local attacker could leverage this vulnerability to potentially execute arbitrary code in the context of the current process.</td>
+			<td>The affected application stores various credentials in plaintext. The issue can be combined with CVE-2025-24865, enabling unauthenticated remote attackers to obtain the cleartext credentials, such as for the configured mail server.</td>
 		  </tr>
 		  <tr class="resources">
 			<th>Resources</th>
-			<td><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-23-299-03">ICSA-23-299-03</a></td>
+			<td><a href="https://www.cisa.gov/news-events/ics-advisories/icsa-25-044-16">ICSA-25-044-16</a></td>
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
 			<td>
-			27.06.2023: Report sent to CISA<br />
-			04.02.2025: Public release of security advisory<br />
+			08.12.2024: Report sent to CISA<br />
+			13.02.2025: Public release of security advisory<br />
 			</td>
 		  </tr>
 		  <tr>
