@@ -24,42 +24,42 @@
 	
 <div class="content-wrap">
 	<div class="content-box">
-		<h1>MicroDicom DICOM Viewer DCM File Parsing Out-of-Bounds Read Vulnerability<span class="small">AWE-2025-028</span></h1>
+		<h1>Fuji Electric V-SFT V7 File Parsing Stack-based Buffer Overflow Vulnerability<span class="small">AWE-2025-033</span></h1>
 		<div class="scroll-box">
 		<table class="info-table">
 		  <tr>
 			<th>CVE ID</th>
-			<td>CVE-2025-36521</td>
+			<td>CVE-2025-47760</td>
 		  </tr>
 		  <tr>
 			<th>Vendor</th>
-			<td>MicroDicom</td>
+			<td>Fuji Electric</td>
 		  </tr>
 		  <tr>
 			<th>Product</th>
-			<td>DICOM Viewer</td>
+			<td>V-SFT</td>
 		  </tr>
 		  <tr>
 			<th>Affected version</th>
-			<td>&#x2264; 2025.1 (Build 3321)</td>
+			<td>&#x2264; v6.2.5.0</td>
 		  </tr>
 		  <tr>
 			<th>Patched version</th>
-			<td>2025.2</td>
+			<td>v6.2.6.0</td>
 		  </tr>
 		  <tr>
 			<th>Summary</th>
-			<td>The affected application lacks proper validation of user-supplied data when parsing DICOM files. This could lead to an out-of-bounds read. An attacker could leverage this vulnerability to potentially execute arbitrary code in the context of the current process. The issue can be exploited remotely, but requires user interaction.</td>
+			<td>The specific flaw exists within the parsing of project files. The issue results from the lack of proper validation of user-supplied data, which can result in a stack-based buffer overflow. Local attackers are able to exploit this issue to execute arbitrary code on affected installations of V-SFT. User interaction is required to exploit the vulnerability in that a user must open a malicious project file.</td>
 		  </tr>
 		  <tr class="resources">
 			<th>Resources</th>
-			<td><a href="https://www.cisa.gov/news-events/ics-medical-advisories/icsma-25-121-01">ICSMA-25-121-01</a></td>
+			<td><a href="https://jvn.jp/en/vu/JVNVU97228144/">JPCERT/CC Advisory JVNVU#97228144</a></td>
 		  </tr>
 		  <tr>
 			<th>Timeline</th>
 			<td>
-			12.02.2025: Report sent to CISA<br />
-			01.05.2025: Public release of security advisory<br />
+			03.08.2024: Report sent to CISA<br />
+			14.05.2025: Public release of security advisory<br />
 			</td>
 		  </tr>
 		  <tr>
