@@ -1213,20 +1213,25 @@ table.info-table{
 
 /*exploits*/
 
-#AdvisoriesTop .exploits th:first-child{
-	width:70%;
-}
-#AdvisoriesTop .exploits th:last-child{
-	width:30%;
+#AdvisoriesTop.exploits table{
+	width:90%;
+	margin: 0 auto;
 }
 
-#AdvisoriesTop .exploits td:nth-child(2)::after {
+#AdvisoriesTop.exploits th:first-child{
+	width:60%;
+}
+#AdvisoriesTop.exploits th:last-child{
+	width:40%;
+}
+
+#AdvisoriesTop.exploits td:nth-child(2)::after {
     margin-left: 0px;
     width: 0px;
     height: 0px;
 	content:none;
 }
-#AdvisoriesTop .exploits td:first-child::after {
+#AdvisoriesTop.exploits td:first-child::after {
     margin-left: 5px;
     content: url(../images/file-text.svg);
     width: 16px;
@@ -1236,6 +1241,10 @@ table.info-table{
 
 
 @media screen and (max-width:1024px){
+
+#AdvisoriesTop.exploits table{
+	width:100%;
+}
 
 .top-content h1{
 	font-size:2em;
